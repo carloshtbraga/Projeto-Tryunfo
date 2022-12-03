@@ -15,6 +15,7 @@ class App extends React.Component {
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
+    getNewCard: [],
   };
 
   validationFields = () => {
@@ -35,6 +36,37 @@ class App extends React.Component {
     });
   };
 
+  onSaveButtonClick = () => {
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+    } = this.state;
+    const newCard = {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+    };
+    this.setState(({ getNewCard }) => ({
+      getNewCard: [...getNewCard, newCard],
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: '',
+    }));
+  };
+
   onInputChange = ({ target }) => {
     const { value, name } = target;
     this.setState({
@@ -46,7 +78,11 @@ class App extends React.Component {
     return (
       <div>
         <h1>Tryunfo</h1>
-        <Form { ...this.state } onInputChange={ this.onInputChange } />
+        <Form
+          { ...this.state }
+          onInputChange={ this.onInputChange }
+          onSaveButtonClick={ this.onSaveButtonClick }
+        />
         <Card { ...this.state } />
       </div>
     );

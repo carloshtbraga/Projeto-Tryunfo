@@ -92,6 +92,7 @@ class App extends React.Component {
   };
 
   render() {
+    const { getNewCard } = this.state;
     return (
       <div>
         <h1>Tryunfo</h1>
@@ -100,7 +101,12 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
-        <Card { ...this.state } />
+        { getNewCard.map((card) => (
+
+          <li key={ card.cardName }>
+            <Card { ...card } />
+          </li>
+        )) }
       </div>
     );
   }

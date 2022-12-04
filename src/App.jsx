@@ -101,6 +101,7 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
+        <Card { ...this.state } />
         { getNewCard.map((card) => (
 
           <li key={ card.cardName }>

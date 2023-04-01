@@ -7,7 +7,7 @@
   <a href="#contato">Contato</a>
 </p>
 <h1 align='center'>
-  <img src='https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-svg-vector.svg' width="350" heigth="350"/>
+  <img src='https://github.com/carloshtbraga/Projeto-Tryunfo/blob/main/Tryunfo.png?raw=true'/>
 </h1>
 <h1 align='center'>Sobre o projeto</h1>
 <p align='center'>Projeto que simula o jogo SUPER TRUNFO, no caso podemos criar as cartas com os stats que quisermos, dentro de um limite</p>
